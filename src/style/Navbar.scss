@@ -1,0 +1,93 @@
+@import "./_theme";
+
+// 導覽列特別設置在1280px為判定樣式轉換
+
+.nav {
+    position: sticky;
+    top: 1.5rem;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    margin: 1.5rem;
+    padding: 0 1rem;
+    background-color: #ffffffea;
+    border-radius: 20px;
+}
+
+
+
+.name_container {
+    @include h4;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: $primaryTheme;
+    text-decoration: none;
+
+    img {
+        margin: 0 0.5rem;
+    }
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav_list {
+    @media(max-width:1280px) {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        justify-content: space-evenly;
+        padding:0.5rem;
+    }
+
+    li {
+        position: relative;
+        cursor: pointer;
+
+        @media(min-width:1281px) {
+            @include base_text;
+            margin: auto 1.5rem;
+
+            &::before {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                height: 2px;
+                content: "";
+                transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+                background: $primaryGradient;
+            }
+
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+
+        @media(max-width:1280px) {
+            @include note;
+            margin: auto;
+            text-align: center;
+        }
+    }
+}
+
+.mediaGroups li {
+    cursor: pointer;
+    margin: auto 0.5rem;
+
+    img {
+        transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        &:hover {
+            transform: scale(1.5);
+        }
+    }
+}
