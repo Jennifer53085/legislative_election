@@ -4,15 +4,17 @@
 
 .nav {
     position: sticky;
-    top: 1.5rem;
+    top: 0.5rem;
     left: 0;
     display: flex;
     justify-content: space-between;
     white-space: nowrap;
-    margin: 1.5rem;
-    padding: 0 1rem;
-    background-color: #ffffffea;
+    margin:0 1rem;
+    padding:1rem 1.5rem;
+    // background-color: #ffffffe1;
+    background-color: #fff;
     border-radius: 20px;
+    z-index: 999;
 }
 
 
@@ -43,6 +45,7 @@ ul {
         width: 100%;
         justify-content: space-evenly;
         padding:0.5rem;
+        background-color: $--50;
     }
 
     li {

@@ -1,4 +1,9 @@
 @import "./_theme";
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
 body {
     width:100%;
@@ -7,7 +12,18 @@ body {
     line-height: 1.5;
 }
 
+header{
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
 section {
     width: 100%;
-    height: calc(100dvh / 5);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+   
 }

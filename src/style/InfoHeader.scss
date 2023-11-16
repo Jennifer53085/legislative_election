@@ -1,0 +1,109 @@
+@import "./_theme.scss";
+
+
+.title {
+  @include main_title;
+  white-space: nowrap;
+}
+
+.candidate_info {
+  @include center;
+}
+
+#info_title {
+  background-color: $primaryText;
+  border-radius: 20px;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  @include h3;
+  margin: 0 1rem;
+}
+
+#info_name {
+  @include h1;
+  @include center;
+  color: $primaryTheme;
+  box-shadow: 1px 5px 5px #eeeeeeb9;
+  border-radius: 20px;
+  padding: 0.75rem 1rem;
+
+  div {
+    @include center;
+    width: 60px;
+    height: 60px;
+    background: $primaryGradient;
+    margin-right:1rem;
+    border-radius: 50px;
+    color: #fff;
+  }
+}
+
+.candidate_img {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  min-height: 60vh;
+  margin-top: 1rem;
+
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+  
+  }
+
+  #candidate{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  #cloud {
+    width: 100%;
+    height: 85%;
+    object-fit:fill;
+  }
+}
+
+@keyframes marquee1 {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+.marquee {
+  @include large_text;
+  background-color: $primaryTheme;
+  color: #fff;
+  width: 100%;
+  height: 10vh;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  div {
+    min-height: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    animation: marquee1 40s linear infinite;
+    padding:10px;
+    
+    &:nth-child(2) {
+      animation: marquee2 40s linear infinite;
+      animation-delay: -20s;
+    }
+  }
+}

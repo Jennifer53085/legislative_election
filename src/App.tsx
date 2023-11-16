@@ -1,36 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Loading from './components/Loading';
+import Loading from "./components/Loading";
 
 // 專放路徑
 function App() {
   const [isLoading, setLoading] = useState(false);
+  const [styled, setStyled] = useState({ opacity: 1 });
+
 
   useEffect(() => {
     setLoading(true);
-  
+
     const handlLoading = () => {
       setTimeout(() => {
-        setLoading(false);
-      }, 2000);
+        setStyled({ opacity: 0 });
+        setTimeout(() => {
+          setLoading(false);
+        }, 300);
+      }, 1500);
     };
-  
-    window.addEventListener('load', handlLoading);
-  
+    window.addEventListener("load", handlLoading);
+
     return () => {
-      window.removeEventListener('load', handlLoading);
+      window.removeEventListener("load", handlLoading);
     };
   }, []);
-  
-  return (<>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-      </Routes>
-    </Router>
-    {isLoading && <Loading/>}
-  </>
+
+  return (
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+        </Routes>
+      {isLoading && <Loading styled={styled} />}
+      </Router>
+    </>
   );
 }
 

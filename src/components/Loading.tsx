@@ -1,21 +1,25 @@
 import "@lottiefiles/lottie-player";
 
-function Loading() {
+interface props{
+  styled:{};
+}
 
-  const style = {
-    position: "fixed"as "fixed",
-    top:0,
-    zIndex: 999,
-    width: "100%",
-    height: "100%",
-    background: "#ffffff",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  };
+function Loading({styled}:props) {
 
   return (
-    <div style={style}>
+    <div style={{
+      position: "fixed"as "fixed",
+      top:0,
+      zIndex: 999,
+      width: "100%",
+      height: "100%",
+      background: "#fff",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      transition:"opacity 0.5s ease",
+      ...styled
+    }}>
      <lottie-player
         autoplay
         loop

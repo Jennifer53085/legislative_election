@@ -1,9 +1,4 @@
-* {
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
+
 // google Noto Sans TC
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
 
@@ -29,7 +24,7 @@ $--600: #475569;
 $--700: #334155;
 $--800: #1e293b;
 $--900: #0f172a;
-$font: "Noto Sans TC", Inter, sans-serif;
+$font: "Noto Sans TC", "Inter", sans-serif;
 
 @mixin media($screen) {
     @if $screen==mobile {
@@ -46,6 +41,7 @@ $font: "Noto Sans TC", Inter, sans-serif;
 }
 
 @mixin h1 {
+   
     font-weight: 700;
 
     @include media(mobile) {
@@ -54,7 +50,6 @@ $font: "Noto Sans TC", Inter, sans-serif;
 
     @include media(desktop) {
         font-size: 2.5rem;
-
     }
 }
 
@@ -134,8 +129,9 @@ $font: "Noto Sans TC", Inter, sans-serif;
         font-weight: 400;
     }
 }
-
-@mixin big_title {
+@mixin large_text {
+    font-family: "Mantou Sans", $font;
+    
     @include media(mobile) {
         font-size: 3.25rem;
         font-weight: 500;
@@ -144,9 +140,42 @@ $font: "Noto Sans TC", Inter, sans-serif;
     @include media(desktop) {
         font-size: 4rem;
         font-weight: 400;
-        font-family: "Mantou Sans", $font;
-        color: transparent;
-        background: $primaryGradient;
-        -webkit-background-clip: text;
     }
+}
+
+@mixin main_title {
+    font-family: "Mantou Sans", $font;
+    color: transparent;
+    background: $primaryGradient;
+    -webkit-background-clip: text;
+    background-clip: text;
+    width: fit-content;
+    height: fit-content;
+    
+    @include media(mobile) {
+        font-size: 3.25rem;
+        font-weight: 500;
+    }
+
+    @include media(desktop) {
+        font-size: 6rem;
+        font-weight: 400;
+    }
+}
+
+
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin label{
+    background-color: $primaryText;
+    color:#fff;
+    padding:0.5rem 0.75rem;
+    width: fit-content;
+    height:fit-content;
+    font-weight: 700;
+    border-radius: 50px;
 }

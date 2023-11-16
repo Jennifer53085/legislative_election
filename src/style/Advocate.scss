@@ -1,0 +1,62 @@
+@import "./_theme.scss";
+
+.advocate_background {
+  @include center;
+  width: 100%;
+  height: 100%;
+  background-color: $bg_2;
+}
+
+.advocate_container {
+  width: 70%;
+  height: 70%;
+
+  border-radius: 20px;
+  background-color: #fff;
+  overflow: hidden;
+
+  @include media(desktop) {
+    @include center;
+    min-height: fit-content; 
+  }
+
+  @include media(mobile) {
+    @include center;
+    flex-direction: column; 
+  }
+
+  img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.text_container {
+  @include center;
+  flex-direction: column;
+  padding: 1.5rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+.advocate_label {
+  @include label;
+}
+
+.advocate_title {
+  @include large_text;
+  color: transparent;
+  background: $primaryGradient;
+  -webkit-background-clip: text;
+  background-clip: text;
+  width: fit-content;
+}
+
+.advocate_article_title {
+  @include h3;
+  margin: 1rem 0;
+  span {
+    color: $primaryTheme;
+  }
+}
