@@ -8,7 +8,7 @@ function InfoHeader() {
   const device = useDevice();
   return (
     <header>
-      <div className="title">
+      <div className="header_title">
         <span>台灣的明天</span>
         {device === "mobile" ? <br /> : " "}
         <span>喵先鋪路</span>

@@ -1,7 +1,7 @@
 @import "./_theme.scss";
 
 
-.title {
+.header_title {
   @include main_title;
   white-space: nowrap;
 }

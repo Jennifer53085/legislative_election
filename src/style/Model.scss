@@ -1,0 +1,13 @@
+@import "./__theme.scss";
+
+.model_background{
+    position: fixed;
+    width:100%;
+    height:100%;
+    background-color: #0000006f;
+}
+
+.model_container{
+    transform: scale(0);
+    transition:0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
